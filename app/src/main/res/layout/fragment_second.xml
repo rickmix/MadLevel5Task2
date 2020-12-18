@@ -47,6 +47,40 @@
 
             </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/DateDay"
+                android:layout_weight ="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Day"/>
+
+            <EditText
+                android:id="@+id/DateMonth"
+                android:layout_weight ="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Month"/>
+
+            <EditText
+                android:id="@+id/DateYear"
+                android:layout_weight ="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Year"/>
+        </LinearLayout>
+
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>

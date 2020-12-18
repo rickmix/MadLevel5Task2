@@ -4,8 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_second.view.*
 import kotlinx.android.synthetic.main.game.view.*
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 class GameAdapter(private val games: List<Game>) : RecyclerView.Adapter<GameAdapter.ViewHolder>() {
 
@@ -29,7 +31,21 @@ class GameAdapter(private val games: List<Game>) : RecyclerView.Adapter<GameAdap
         fun dataBind(game: Game) {
             itemView.titleText.text = game.title
             itemView.platformText.text = game.platform
-            itemView.dateTime.text = game.release.toString()
+
+            val dateFormat = SimpleDateFormat("dd EEEE yyyy")
+            try {
+                val date = game.release
+                val dateTime: String = dateFormat.format(date)
+                itemView.dateTime.text = "Release: $dateTime"
+
+//                val sdf = SimpleDateFormat("EEEE")
+//                val d = Date()
+//                val dayOfTheWeek: String = sdf.format(d)
+
+            } catch (e: ParseException) {
+                e.printStackTrace()
+            }
+
         }
     }
 
