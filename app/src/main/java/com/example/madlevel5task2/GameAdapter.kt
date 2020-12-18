@@ -32,7 +32,7 @@ class GameAdapter(private val games: List<Game>) : RecyclerView.Adapter<GameAdap
             itemView.titleText.text = game.title
             itemView.platformText.text = game.platform
 
-            val dateFormat = SimpleDateFormat("dd EEEE yyyy")
+            val dateFormat = SimpleDateFormat("dd MMMM yyyy")
             try {
                 val date = game.release
                 val dateTime: String = dateFormat.format(date)
