@@ -4,6 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.fragment_second.view.*
+import kotlinx.android.synthetic.main.game.view.*
 
 class GameAdapter(private val games: List<Game>) : RecyclerView.Adapter<GameAdapter.ViewHolder>() {
 
@@ -25,7 +27,9 @@ class GameAdapter(private val games: List<Game>) : RecyclerView.Adapter<GameAdap
         // val binding = ItemReminderBinding.bind(itemView)
 
         fun dataBind(game: Game) {
-//            itemView.tvReminder.text = reminder.reminderText
+            itemView.titleText.text = game.title
+            itemView.platformText.text = game.platform
+            itemView.dateTime.text = game.release.toString()
         }
     }
 
